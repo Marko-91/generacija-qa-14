@@ -2,7 +2,7 @@ package com.itbootcamp.bgqa.nedelja2;
 
 import java.util.Scanner;
 
-public class ProizvodBrojevaKorisnika {
+public class SumaBrojevaKorisnika {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -15,7 +15,7 @@ public class ProizvodBrojevaKorisnika {
             suma += korisnikovBroj;
 
             System.out.print("Za zavrsetak unesite 'kraj', za nastavak unesite bilo sta: ");
-            input = scanner.next();
+            input = scanner.next().toLowerCase();
             if (input.equals("kraj")) {
                 System.out.println("Kraj igre");
             } else {
