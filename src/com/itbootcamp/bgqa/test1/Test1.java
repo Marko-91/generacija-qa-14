@@ -12,6 +12,7 @@ package com.itbootcamp.bgqa.test1;
  * Ne menjati potpise metoda zbog brzeg i lakseg uvida u rad.
  * Voditi racuna da metoda vraca zahtevanu vrednost.
  *
+ * Po zavretku upload-ovati file na uploadLokacija.
  * UploadLokacija: https://drive.google.com/drive/folders/17gLXRxx8l7Y_JN8WsAlXVjpRGwd8dq4z
  *
  *
