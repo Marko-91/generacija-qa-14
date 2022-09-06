@@ -1,41 +1,26 @@
 package com.itbootcamp.bgqa.nedelja4;
 
 public class Polaznik {
-    int jmbg;
-    int godine;
-    String ime;
-    String prezime;
+    private int jmbg;
+    private int godine; // default access
+    private String ime;
+    private String prezime;
 
-    Polaznik(int noviJmbg, int godine, String ime, String prezime) {
+    public Polaznik(int noviJmbg, int godine, String ime, String prezime) {
         jmbg = noviJmbg;
         this.godine = godine;
         this.ime = ime;
         this.prezime = prezime;
     }
 
-    public static void main(String[] args) {
-        Polaznik dusan = new Polaznik(999191919, 30, "Dusan", "Stevanovic");
-        System.out.println(dusan.jmbg);
-        System.out.println(dusan.godine);
-        System.out.println(dusan.ime);
-        System.out.println(dusan.prezime); // polje
-        System.out.println(dusan.jePunoletan()); // poziv metode
+    //setter za godine
+    public void setGodine() {
+        godine = godine + 1;
+    }
 
-        Polaznik milos = new Polaznik(191293, 29, "Milos", "Obradovic");
-        System.out.println(milos.jmbg);
-        System.out.println(milos.godine);
-        System.out.println(milos.ime);
-        System.out.println(milos.prezime); // polje
-        System.out.println(milos.jePunoletan()); // poziv metode
-        Polaznik obrad = new Polaznik(191293, 18, "Obrad", "Obradovic");
-
-        Polaznik[] polaznici = new Polaznik[3];
-        polaznici[0] = dusan;
-        polaznici[1] = milos;
-        polaznici[2] = obrad;
-
-        System.out.println("prosek godina je: " + Polaznik.prosekGodina(polaznici));
-        System.out.println(Math.abs(2));
+    //setter za prezime
+    public void setPrezime(String novoPrezime) {
+        prezime = novoPrezime;
     }
 
     boolean jePunoletan() {
@@ -52,4 +37,24 @@ public class Polaznik {
         return prosekGodina / listaPolaznika.length;
     }
 
+    public String getIme() {
+        return ime;
+    }
+
+    public String getPrezime() {
+        return prezime;
+    }
+
+    public int getGodine() {
+        return godine;
+    }
+
+    public int getJmbg() {
+        return jmbg;
+    }
+
+    public static void main(String[] args) {
+        Polaznik petar = new Polaznik(2222222, 30, "Petar", "Petrovic");
+        int jmg = petar.jmbg;
+    }
 }
