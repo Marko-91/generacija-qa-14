@@ -32,8 +32,16 @@ public class Test1 {
      * @return deskripcija numericke ocene
      */
     public static String ocene(int ocena) {
-        //TODO
-        return "";
+        String izlaz = "";
+        switch (ocena) {
+            case 1:
+                izlaz = "nedovoljan";
+                break;
+            case 2:
+                izlaz = "dovoljan";
+                break;
+        }
+        return izlaz;
     }
 
     /**
@@ -85,16 +93,26 @@ public class Test1 {
      * Alfabet : A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
      * ABD -> "C"
      * IJKLN -> "M"
+     * JUWNFJ ->
      * WXYZ -> ""
      * @param nizSlova niz slova. Ne mora pocinjati sa "A"
      * @return slovo koje nedostaje, ili prazan string "" ukoliko je redosled ispravan
      */
     public static String abeceda(String nizSlova) {
-        //TODO
-        return "";
+        String izvorIstine = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int indexSlova = izvorIstine.indexOf(nizSlova.charAt(0));
+        String karakterKojiNedostaje = "";
+        for (int i = indexSlova, indexNizaSlova = 0; indexNizaSlova < nizSlova.length(); i++, indexNizaSlova++) {
+            if (nizSlova.charAt(indexNizaSlova) != izvorIstine.charAt(i)) {
+                karakterKojiNedostaje = String.valueOf(izvorIstine.charAt(i));
+                break;
+            }
+
+        }
+        return karakterKojiNedostaje;
     }
 
     public static void main(String[] args) {
-        //TESTS
+        System.out.println(abeceda("WXYZ"));
     }
 }
