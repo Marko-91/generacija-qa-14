@@ -8,7 +8,7 @@ public class TestPolaznici {
         System.out.println(petar.getPrezime());
         System.out.println(petar.getGodine());
         System.out.println(petar.getJmbg());
-
+        //petar.ime = "Novo ime";
         petar.setGodine();
         petar.setPrezime("Mitrovic");
         System.out.println(petar.getGodine());
