@@ -25,13 +25,13 @@ public class Racun {
 
     public static void main(String[] args) throws IOException {
         Roba meso =
-                new Meso(123, 1000, "junetina", 0, new Prozvodjac(), 100.00, "smrznuto");
+                new Meso(58328, 1000, "junetina", 0, new Prozvodjac(), 100.00, "smrznuto");
 
         Roba mleko =
-                new MlecniProizvod(123, 1000, "banane", 0, new Prozvodjac(), "tetrapak");
+                new MlecniProizvod(342534, 321, "banane", 0, new Prozvodjac(), "tetrapak");
 
         Roba banane =
-                new PijacniProizvod(123, 1000, "banane", 0, new Prozvodjac(), 100.00, false);
+                new PijacniProizvod(2345, 42, "banane", 0, new Prozvodjac(), 100.00, false);
         ArrayList<Roba> roba  = new ArrayList<>();
         roba.add(meso);
         roba.add(mleko);

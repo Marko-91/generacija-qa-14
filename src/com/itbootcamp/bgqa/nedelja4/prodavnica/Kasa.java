@@ -13,11 +13,11 @@ public class Kasa {
     }
 
     public String kreirajRacun() {
-        String robaOut = null;
-        for (Roba r : roba) {
-            robaOut += r.toString();
-            robaOut += "\n";
-        }
+//        String robaOut = null;
+//        for (Roba r : roba) {
+//            robaOut += r.toString();
+//            robaOut += "\n";
+//        }
         return roba.toString();
     }
 }
