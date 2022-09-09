@@ -1,4 +1,4 @@
-package com.itbootcamp.bgqa.testpaket;
+package com.itbootcamp.bgqa.nedelja4.testpaket;
 import com.itbootcamp.bgqa.nedelja4.Polaznik;
 
 public class TestPolaznici {
