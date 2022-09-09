@@ -22,10 +22,16 @@ public class MlecniProizvod extends Roba {
     }
 
     public static void main(String[] args) {
-        PijacniProizvod juneceMeso =
-                new PijacniProizvod(123, 1000, "banane", 0, new Prozvodjac(), 100.00, false);
-        juneceMeso.obracunajCenu();
-        assert juneceMeso.getCena() == 100.00;
+        Roba milk =
+                new MlecniProizvod(123, 1000, "banane", 0, new Prozvodjac(), "tetrapak");
+        milk.obracunajCenu();
+        assert milk.getCena() == 100.00;
         System.out.println("Testovi prosli");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "tip pakovanja=" + tipPakovanja +'\n';
     }
 }

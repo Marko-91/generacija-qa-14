@@ -58,13 +58,11 @@ public class Roba {
 
     @Override
     public String toString() {
-        return "Roba{" +
-                "barKod=" + barKod +
+        return "barKod=" + barKod +
                 ", cena=" + cena +
                 ", naziv='" + naziv + '\'' +
                 ", popust=" + popust +
-                ", prozvodjac=" + prozvodjac +
-                '}';
+                ", prozvodjac=" + prozvodjac;
     }
 
     public static void main(String[] args) {

@@ -16,10 +16,18 @@ public class Meso extends Roba {
     }
 
     public static void main(String[] args) {
-        PijacniProizvod juneceMeso =
-                new PijacniProizvod(123, 1000, "banane", 0, new Prozvodjac(), 100.00, false);
+        Roba juneceMeso =
+                new Meso(123, 1000, "junetina", 0, new Prozvodjac(), 100.00, "smrznuto");
         juneceMeso.obracunajCenu();
         assert juneceMeso.getCena() == 100.00;
         System.out.println("Testovi prosli");
+    }
+
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "tezina=" + tezina +
+                ", tip='" + tip + '\n';
     }
 }

@@ -23,4 +23,11 @@ public class PijacniProizvod extends Roba {
         assert banane.getCena() == 100.00;
         System.out.println("Testovi prosli");
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "tezina=" + tezina +
+                ", uvoz='" + uvoz + '\n';
+    }
 }
