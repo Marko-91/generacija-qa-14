@@ -21,6 +21,14 @@ public class Macka extends Zivotnja {
 
     @Override
     public boolean equals(Object object) {
+        if (object == null) {
+            return false;
+        }
+
+        if (!(object instanceof Macka)) {
+            return false;
+        }
+
         Macka macaKojaSePoredi = (Macka) object;
 
         return this.getIme().equals(macaKojaSePoredi.getIme())
