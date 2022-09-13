@@ -1,4 +1,4 @@
-package com.itbootcamp.bgqa.nedelja5;
+package com.itbootcamp.bgqa.nedelja5.zivotinje;
 
 public class Macka extends Zivotnja {
 

@@ -1,8 +1,16 @@
-package com.itbootcamp.bgqa.nedelja5;
+package com.itbootcamp.bgqa.nedelja5.zivotinje;
 
 public class Zivotnja {
     private String ime;
     private String rasa;
+    protected int brojNogu;
+    String brojCipa;
+
+    public Zivotnja(String ime, String rasa, int brojNogu) {
+        this.ime = ime;
+        this.rasa = rasa;
+        this.brojNogu = brojNogu;
+    }
 
     public Zivotnja(String ime, String rasa) {
         this.ime = ime;
@@ -23,6 +31,16 @@ public class Zivotnja {
 
     public void javiSe() {
         System.out.println("mju...");
+    }
+
+    //protected
+    protected void igrajSeUBiblioteci() {
+        System.out.println("pravi haos...");
+    }
+
+    //defaultni modifikator/pristup
+    void hraniSeOmiljenomHranom() {
+        System.out.println("Jede dzigu");
     }
 
     @Override

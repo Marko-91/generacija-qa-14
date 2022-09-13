@@ -1,7 +1,5 @@
 package com.itbootcamp.bgqa.nedelja5.knjige;
 
-import com.itbootcamp.bgqa.nedelja5.Macka;
-
 public class Knjiga {
     private String naslov;
     private String zanr;

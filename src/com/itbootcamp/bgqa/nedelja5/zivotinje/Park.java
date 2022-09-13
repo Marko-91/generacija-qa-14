@@ -1,4 +1,4 @@
-package com.itbootcamp.bgqa.nedelja5;
+package com.itbootcamp.bgqa.nedelja5.zivotinje;
 
 import java.util.ArrayList;
 
@@ -13,6 +13,15 @@ public class Park {
     }
 
     public static void main(String[] args) {
+        Zivotnja zivuljka = new Zivotnja("dzeki", "pas", 4);
+        int brojNogu = zivuljka.brojNogu;
+
+        //int ime = zivuljka.ime;
+
+
+
+
+
         ArrayList<Zivotnja> listaZivotinja = new ArrayList<>();
         double povrsinaParka = 100;
 

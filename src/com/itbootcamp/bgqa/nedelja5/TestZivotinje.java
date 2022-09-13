@@ -1,5 +1,7 @@
 package com.itbootcamp.bgqa.nedelja5;
 
+import com.itbootcamp.bgqa.nedelja5.zivotinje.Macka;
+
 public class TestZivotinje {
     public static void main(String[] args) {
         Macka macka1 = new Macka("Flekica", "maca", "viskas");
