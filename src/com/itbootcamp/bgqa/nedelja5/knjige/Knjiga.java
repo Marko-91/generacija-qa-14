@@ -1,6 +1,6 @@
 package com.itbootcamp.bgqa.nedelja5.knjige;
 
-public class Knjiga {
+public class Knjiga implements Comparable{
     private String naslov;
     private String zanr;
     private int godinaIzdanja;
@@ -112,4 +112,12 @@ public class Knjiga {
         System.out.println(knjiga3.getAutor());
     }
 
+    @Override
+    public int compareTo(Object o) {
+        Knjiga knjigaKojaSePoredi = (Knjiga) o;
+        // 2 6 = 2-6 = -4 < 0
+        // 3 3 = 3-3 = 0 = 0
+        // 6 3 = 6 - 3 = 3 > 0
+        return knjigaKojaSePoredi.getBrojProdatihKopija() - this.getBrojProdatihKopija();
+    }
 }

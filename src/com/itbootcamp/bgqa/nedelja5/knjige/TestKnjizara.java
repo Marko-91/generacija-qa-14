@@ -22,18 +22,10 @@ public class TestKnjizara {
 
         listaKnjiga.add(triler);
         Knjizara knjizara = new Knjizara(listaKnjiga);
-        ArrayList<Knjiga> autorove = knjizara.autoroveKnige("Bob Dilan");
-        //System.out.println(autorove);
-        ArrayList<Knjiga> bestSeller = knjizara.bestSeller();
-        //System.out.println(bestSeller);
-        //System.out.println(listaKnjiga);
-        ArrayList<Integer> listaInt = new ArrayList<>();
-        listaInt.add(400);
-        listaInt.add(10000);
-        listaInt.add(3);
-        System.out.println(listaInt);
-
-        Collections.sort(listaInt);
-        System.out.println(listaInt);
+        System.out.println("Pre sortiranja: ");
+        System.out.println(listaKnjiga);
+        Collections.sort(listaKnjiga);
+        System.out.println("Posle sortiranja: ");
+        System.out.println(listaKnjiga);
     }
 }
