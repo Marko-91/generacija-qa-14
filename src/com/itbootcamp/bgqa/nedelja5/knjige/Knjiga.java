@@ -115,9 +115,6 @@ public class Knjiga implements Comparable{
     @Override
     public int compareTo(Object o) {
         Knjiga knjigaKojaSePoredi = (Knjiga) o;
-        // 2 6 = 2-6 = -4 < 0
-        // 3 3 = 3-3 = 0 = 0
-        // 6 3 = 6 - 3 = 3 > 0
         return knjigaKojaSePoredi.getBrojProdatihKopija() - this.getBrojProdatihKopija();
     }
 }
