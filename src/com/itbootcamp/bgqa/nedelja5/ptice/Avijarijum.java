@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Avijarijum {
+    public Avijarijum(ArrayList<Ptica> ptice) {
+        this.ptice = ptice;
+    }
+
     private ArrayList<Ptica> ptice;
 
     public Predator najuspesnijiLovac() {
@@ -44,5 +48,23 @@ public class Avijarijum {
 
     public void sortPtice() {
         Collections.sort(ptice);
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Ptica> ptice = new ArrayList<>();
+        Orao orao1 = new Orao(6.5, 7.5, 3, "Pl", 10, 2, new ArrayList<>(), 1);
+        Orao orao2 = new Orao(6.5, 7.5, 3, "Pl", 10, 2, new ArrayList<>(), 2);
+        ptice.add(orao1);
+        ptice.add(orao2);
+
+        Avijarijum avijarijum = new Avijarijum(ptice);
+        orao2.lovi(orao1);
+        orao2.lovi(orao1);
+
+
+        Predator p = avijarijum.najuspesnijiLovac();
+
+        System.out.println(p);
+
     }
 }

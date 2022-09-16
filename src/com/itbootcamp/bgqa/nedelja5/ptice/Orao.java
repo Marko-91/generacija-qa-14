@@ -12,7 +12,7 @@ public class Orao extends Ptica implements Predator{
     @Override
     public boolean lovi(Ptica ptica) {
         if (ptica.getRasponKrila() < 100) {
-            setBrojUlova(this.brojUlova++);
+            setBrojUlova(this.brojUlova+1);
             return true;
         }
 
@@ -28,4 +28,10 @@ public class Orao extends Ptica implements Predator{
         this.brojUlova = brojUlova;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", brojUlova=" + brojUlova +
+                '}';
+    }
 }
