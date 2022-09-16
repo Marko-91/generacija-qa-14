@@ -1,10 +1,12 @@
 package com.itbootcamp.bgqa.nedelja3;
 
+import java.util.Random;
+
 public class Dan2Metode {
     public static void main(String[] args) {
         //System.out.println(stepen(-2, -3));
-        for (int i = 0; i < 100; i++) {
-            System.out.println(random(5.5, 7.5));
+        for (int i = 0; i < 10; i++) {
+            System.out.println(random(5.5, 8.5));
         }
     }
 
@@ -13,7 +15,7 @@ public class Dan2Metode {
     }
 
     public static double random(double donjaGranica, double gornjaGranica) {
-        return Math.round((Math.random() * (gornjaGranica - donjaGranica + 1) + donjaGranica) * 100.0 ) / 100.0;
+        return (Math.random() * (gornjaGranica - donjaGranica)) + donjaGranica;
     }
 
     public static double stepen(double n, int eksp) {
