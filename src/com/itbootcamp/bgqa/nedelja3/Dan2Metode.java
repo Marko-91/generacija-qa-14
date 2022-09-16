@@ -1,5 +1,6 @@
 package com.itbootcamp.bgqa.nedelja3;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Dan2Metode {
@@ -15,7 +16,9 @@ public class Dan2Metode {
     }
 
     public static double random(double donjaGranica, double gornjaGranica) {
-        return (Math.random() * (gornjaGranica - donjaGranica)) + donjaGranica;
+        DecimalFormat decimalFormat = new DecimalFormat("#.00");
+        double n = (Math.random() * (gornjaGranica - donjaGranica)) + donjaGranica;
+        return Double.parseDouble(decimalFormat.format(n));
     }
 
     public static double stepen(double n, int eksp) {
