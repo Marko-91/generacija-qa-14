@@ -1,4 +1,4 @@
-package com.itbootcamp.bgqa.test1;
+package com.itbootcamp.bgqa.nedelja3.test1;
 
 /**
  * TEST 1 JAVA
