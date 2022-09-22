@@ -49,7 +49,6 @@ public class DemoDohvatanjeElemenata {
 
         System.out.println(name.getText().equals("Name:Zarko"));
 
-
         wd.close();
 
 
