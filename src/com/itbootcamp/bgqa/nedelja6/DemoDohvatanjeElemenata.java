@@ -45,8 +45,9 @@ public class DemoDohvatanjeElemenata {
 
         submitBtn.click();
         Thread.sleep(3000);
+        WebElement name = wd.findElement(By.id("name"));
 
-
+        System.out.println(name.getText().equals("Name:Zarko"));
 
 
         wd.close();
