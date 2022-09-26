@@ -26,4 +26,28 @@ public class HomePage {
         WebElement addedText = webDriver.findElement(By.xpath(MODAL_HEADING_XPATH));
         return addedText.getText();
     }
+
+    public void clickOnHome() {
+
+    }
+
+    public void scrollToDress(int dressNumber) {
+
+    }
+
+    public void hoverToDress(WebElement dress) {
+
+    }
+
+    public void clickToAddCardButton() {
+
+    }
+
+    public void clickOnViewCardButton() {
+
+    }
+    ///html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[9]
+    ///html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[10]
+    ///html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[11]
+
 }

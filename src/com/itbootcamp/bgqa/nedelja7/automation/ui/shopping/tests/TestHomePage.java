@@ -42,12 +42,14 @@ public class TestHomePage {
         //region Idem na home
         WebElement home = wd.findElement(By.xpath("/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]"));
         home.click();
+        //homePage.clickOnHome();
         //endregion
 
         //region Scroll do prve haljine
         WebElement prvaHaljina = wd.findElement(By.xpath("/html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[2]"));
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) wd;
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(true)", prvaHaljina);
+        //homePage.scrollToDress(2);
         //endregion
 
         //region Hover na tu haljinu
