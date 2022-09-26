@@ -1,6 +1,7 @@
-package com.itbootcamp.bgqa.nedelja7.automation.ui.shopping;
+package com.itbootcamp.bgqa.nedelja7.automation.ui.shopping.tests;
 
 import com.itbootcamp.bgqa.nedelja6.PropertiesReader;
+import com.itbootcamp.bgqa.nedelja7.automation.ui.shopping.pages.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,8 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class TestHomePage {
+
+    private final static String MODAL_TITLE_EXPECTED = "Added!";
 
     /**
      * Test steps:
@@ -34,6 +37,7 @@ public class TestHomePage {
         WebDriver wd = new ChromeDriver();
         wd.get("https://www.automationexercise.com/");
         wd.manage().window().maximize();
+        HomePage homePage = new HomePage(wd);
 
         //region Idem na home
         WebElement home = wd.findElement(By.xpath("/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]"));
@@ -57,14 +61,7 @@ public class TestHomePage {
         //endregion
 
         //region Potvrdimo da se pojavilo 'Added'
-        boolean elementFound = new WebDriverWait(wd, Duration.ofSeconds(2))
-                .until(ExpectedConditions.textToBe(By.xpath("/html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h4[1]"), "Added!"));
-        if (elementFound) {
-            System.out.println("element found!");
-        }
-        WebElement addedText = wd.findElement(By.xpath("/html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h4[1]"));
-        String actualText = addedText.getText();
-        Assert.assertEquals(actualText, "Added!", "The text should be added");
+        Assert.assertEquals(homePage.getModalTitle(), MODAL_TITLE_EXPECTED, "The text should be added");
         //endregion
 
         //region Kliknemo view cart
@@ -80,4 +77,5 @@ public class TestHomePage {
 
         wd.close();
     }
+
 }
