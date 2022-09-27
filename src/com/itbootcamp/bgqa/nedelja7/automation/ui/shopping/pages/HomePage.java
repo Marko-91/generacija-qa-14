@@ -37,6 +37,9 @@ public class HomePage {
         home.click();
     }
     private WebElement getDress(int dressNumber) {
+        if (dressNumber < 2 || dressNumber > 35) {
+            throw new IllegalArgumentException(String.format("The dress number %d is not available", dressNumber));
+        }
         return webDriver.findElement(By.xpath("/html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[" + dressNumber + "]"));
     }
     public void scrollToDress(int dressNumber) {
