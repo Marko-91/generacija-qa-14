@@ -12,10 +12,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+
 
 public class TestHomePage {
 
@@ -24,6 +29,20 @@ public class TestHomePage {
     private HomePage homePage;
     private ViewCart viewCart;
 
+//    @BeforeClass
+//    public void preKlase() {
+//        System.out.println("Pre pustanja u rad klase");
+//    }
+
+//    @BeforeGroups
+//    @BeforeSuite
+//    @BeforeTest
+//    @BeforeSuite
+//    public void logging() {
+//        System.out.println(this.getClass().getSimpleName() + " is running...");
+//    }
+
+//    @BeforeGroups(groups = "acceptance")
     @BeforeMethod
     public void configure() {
         System.out.println("Ovo se izvrsva pre pokretanja test metode");
@@ -46,7 +65,7 @@ public class TestHomePage {
      * 6. Kliknemo view cart
      * 7. Potvrdimo da je haljina u korpi
      */
-    @Test
+    @Test(groups = {"regression", "acceptance"})
     public void testAddToShoppingCardHappyPath() {
 
         homePage.clickOnHome();
@@ -63,12 +82,13 @@ public class TestHomePage {
 
     @Test
     public void testAddToShoppingCardUnhappyPath() {
-        WebDriver wd = new ChromeDriver();
-        wd.get("https://www.automationexercise.com/");
-        wd.manage().window().maximize();
-        HomePage homePage = new HomePage(wd);
         homePage.clickOnHome();
         Assert.assertThrows(IllegalArgumentException.class, () -> homePage.scrollToDress(100));
+    }
+
+    @AfterMethod
+    public void closeWebDriver() {
+        webDriver.close();
     }
 
 }
