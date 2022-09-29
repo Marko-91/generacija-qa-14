@@ -2,6 +2,7 @@
 
 <suite name="Home page testing" verbose="1" >
     <test name="Home page"   >
+        <parameter name="test"  value="123"/>
         <packages>
             <package name="com.itbootcamp.bgqa.nedelja7.automation.ui.shopping.tests" />
         </packages>
