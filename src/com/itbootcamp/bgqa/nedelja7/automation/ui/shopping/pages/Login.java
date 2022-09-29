@@ -18,6 +18,18 @@ public class Login {
     @FindBy(xpath = "/html[1]/body[1]/section[1]/div[1]/div[1]/div[3]/div[1]/form[1]/button[1]")
     private WebElement button;
 
+    @FindBy(xpath = "/html[1]/body[1]/section[1]/div[1]/div[1]/div[1]/div[1]/form[1]/input[2]")
+    private WebElement emailLoginExistingUser;
+
+    @FindBy(xpath = "/html[1]/body[1]/section[1]/div[1]/div[1]/div[1]/div[1]/form[1]/input[3]")
+    private WebElement passwordLogInExistingUser;
+
+    @FindBy(xpath = "/html[1]/body[1]/section[1]/div[1]/div[1]/div[1]/div[1]/form[1]/button[1]")
+    private WebElement buttonLoginExistingUser;
+
+    @FindBy(xpath = "/html[1]/body[1]/section[1]/div[1]/div[1]/div[1]/div[1]/form[1]/p[1]")
+    private WebElement textLoginExistingUserIncorrectEmailOrPassword;
+
     public Login(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(this.webDriver, this); // ucitaj sve elemente na web stranici
@@ -34,4 +46,22 @@ public class Login {
     public void inputEmailField(String email) {
         this.email.sendKeys(email);
     }
+
+    public void inputEmailLoginExistingUserField(String email) {
+        emailLoginExistingUser.sendKeys(email);
+    }
+
+    public void inputPasswordLoginExistingUserField(String password) {
+        passwordLogInExistingUser.sendKeys(password);
+    }
+
+    public String getTextLoginExistingUserIncorrectEmailOrPassword() {
+        return textLoginExistingUserIncorrectEmailOrPassword.getText();
+    }
+
+    public void clickButtonLoginExistingUser() {
+        buttonLoginExistingUser.click();
+    }
+
+
 }
