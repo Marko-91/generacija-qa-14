@@ -1,20 +1,26 @@
+package com.itbootcamp.bgqa.nedelja7.domaci;
+
+import com.itbootcamp.bgqa.nedelja6.PropertiesReader;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import utils.PropertiesReader;
+import org.testng.annotations.Test;
 
 public class D_20_Milos_Kos {
 
-    public static WebDriver wd = new ChromeDriver();
+    public static WebDriver wd;
 
-    @BeforeSuite
+    @BeforeMethod
     public void configure (){
         System.setProperty("webdriver.chrome.driver",
                 PropertiesReader.getInstance().getValue("WEBDRIVER.CHROMEDRIVER"));
+        wd = new ChromeDriver();
     }
+    @Test
 
-    public static void main(String[] args) throws InterruptedException {
+    public void testPravljenjeNaloga() throws InterruptedException {
         String ime = "Pera";
         String prezime = "Peric";
         String mail = "peraperic@petlic.com";
@@ -73,5 +79,6 @@ public class D_20_Milos_Kos {
         WebElement submit = wd.findElement(By.id("submit"));
         submit.click();
 
+        wd.close();
     }
 }

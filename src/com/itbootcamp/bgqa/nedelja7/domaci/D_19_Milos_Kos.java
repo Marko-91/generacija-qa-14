@@ -1,14 +1,24 @@
+package com.itbootcamp.bgqa.nedelja7.domaci;
+
+import com.itbootcamp.bgqa.nedelja6.PropertiesReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class D_19_Milos_Kos {
-    public static void main(String[] args) throws InterruptedException {
+    private static WebDriver wd;
+    @BeforeMethod
+    public void configure() {
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\Test\\Desktop\\Zadaci\\Java\\automation\\chromedriver.exe");
-
-        WebDriver wd = new ChromeDriver();
+                PropertiesReader.getInstance().getValue("WEBDRIVER.CHROMEDRIVER"));
+        wd = new ChromeDriver();
+    }
+    @Test
+    public void testPopunjavanjeForme() {
 
         wd.get("https://demoqa.com/text-box");
 
@@ -28,10 +38,8 @@ public class D_19_Milos_Kos {
         submitButton.click();
 
         WebElement prosao = wd.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/form[1]/div[6]/div[1]"));
-        assert prosao.isDisplayed();
-        System.out.println("Test prosao");
+        Assert.assertTrue(prosao.isDisplayed());
 
-        Thread.sleep(3000);
         wd.close();
     }
 }
