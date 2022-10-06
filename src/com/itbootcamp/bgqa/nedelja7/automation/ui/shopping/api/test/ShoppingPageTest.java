@@ -32,11 +32,12 @@ public class ShoppingPageTest {
         JsonPath expectedJson = new JsonPath(new File(getRelativeUri("product-list-expected.json")));
 
         given()
-                .filter(new ContentTypeFilter())
-                .get("productsList")
+                .filter(new ContentTypeFilter()) //workaround since API returns text/html
+                .get("productsList") //vraca stvarni rezultat
                 .then()
-                .body("", equalTo(expectedJson.getJsonObject("")))
-                .assertThat().statusCode(200);
+                .log().body() //ovde se loguje stvarni rezultat
+                .body("", equalTo(expectedJson.getJsonObject(""))) //proveravamo da li je stvarni=ocekivani
+                .assertThat().statusCode(200); //proveravamo status kod
     }
 
     @Test
@@ -57,9 +58,10 @@ public class ShoppingPageTest {
         JsonPath expectedJson = new JsonPath(new File(getRelativeUri("brands-list-expected.json")));
 
         given()
-                .filter(new ContentTypeFilter())
+                .filter(new ContentTypeFilter()) //workaround
                 .get("brandsList")
                 .then()
+                .log().body()
                 .body("", equalTo(expectedJson.getJsonObject("")))
                 .assertThat().statusCode(200);
     }
@@ -81,7 +83,7 @@ public class ShoppingPageTest {
         //Response is not valid, report a bug
         given()
                 .filter(new ContentTypeFilter())
-                .queryParam("search_product", "top")
+                .queryParam("search_product", "jeans")
                 .when()
                 .post("searchProduct")
                 .then()
@@ -93,6 +95,13 @@ public class ShoppingPageTest {
     public void postToCreateUserAccount() {
 
         User user = User.builder().email("email@email.com").name("tester1").password("123").build();
+        /*
+        ===== moze i ovako =====
+        User user1 = new User();
+        user.setEmail("email@email.com");
+        user.setName("tester1");
+        user.setPassword("123");
+         */
 
         given()
                 .body(user)
